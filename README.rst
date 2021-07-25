@@ -4,7 +4,7 @@ DstLib - Data Structures Python Library
 DstLib is a Python library for linear data structuree It can be used to work with linked list, queue and stack.
 Linked list is known for its better performance compared to normal python array, but python doesn't come with linked list.
 So this library is here to fill this gap. Both the queue and the stack are implemented using using linked list.
-Source Code (Don’t forget to put a star if you liked our project😅): `dstlib <https://github.com/algebra7dsalib>`
+Source Code (Don’t forget to put a star if you liked my project😅): `dstlib <https://github.com/algebra7dsalib>`
 
 
 Installation
