@@ -1,4 +1,4 @@
-DstLib - The Data Structures Python Library
+DstLib - Data Structures Python Library
 ============================================
 
 DstLib is a Python library for linear data structuree It can be used to work with linked list, queue and stack.
