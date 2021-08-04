@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='dstlib',
-    version='1.0',
+    version='1.2',
     description='Data structures python library',
     url="https://github.com/algebra7/dstlib",
     packages=['dstlib'],

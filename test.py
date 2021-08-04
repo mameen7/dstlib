@@ -61,6 +61,17 @@ class LinkedListValuesTest(unittest.TestCase):
         reverse_L = [l for l in L]
         self.assertEqual(reverse_L, reverse)
 
+        self.assertEqual(L[0], 15)
+        self.assertEqual(L[1], 14)
+        self.assertEqual(L[2], 13)
+        self.assertEqual(L[7], 8)
+        self.assertEqual(L[8], 7)
+        self.assertEqual(L[len(L)-1], 0)
+
+        self.assertIsNone(L.insert(0, 16))
+        self.assertIsNone(L.insert(17, 17))
+
+
 
 class QueueValuesTest(unittest.TestCase):
     

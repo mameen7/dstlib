@@ -25,6 +25,7 @@ Working with Linked List
     is_empty = L.is_empty()     #to know whether the list is empty or not: returns boolean
     L.append(x)                 #to append an element x
     L.prepend(y)                #to add an element y to the front of the list
+    L.insert(i, x)              #to insert an element x at a given index i
 
     p1 = L.add_first(x)         #do the same as L.prepend() but return the position of the added element x
     pl = L.add_last(y)          #do the same as L.append() but return the position of the added element y
@@ -47,6 +48,8 @@ Working with Linked List
     L.concat(L2)                #to concatenate L2 to L (append all L2 elements to L)
 
     L.sort()                    #to sort the elements of L in ascending order
+
+    L[i]                        #to get the element at index i in the linked list
 
     
 
