@@ -1,6 +1,7 @@
 from .node import Node
 from .utils import _Position
 from .exceptions import ValueError
+import math
 
 class _DoubleLinkedBase:
     """A base class providing a doubly linked list representation"""
@@ -20,6 +21,20 @@ class _DoubleLinkedBase:
         Returns: int: size of the Linked List
         """
         return self._size
+
+    def __getitem__(self, i):
+        """Return element at index i"""
+        if not 0 <= i < self._size:
+            raise IndexError("invalid index")
+        
+        max_index = self._size - 1
+        if i == 0:
+            return self._head._next._element
+        if i == max_index:
+            return self._tail._prev._element
+        
+        current_node = self._get_current_node(i, max_index)
+        return current_node._element
 
     def _delete_node(self, node):
         """
@@ -88,6 +103,27 @@ class _DoubleLinkedBase:
         self._head._next = new_node
         self._size += 1
 
+    def insert(self, i, el):
+        """
+        Insert a given element 'el' at a given index 'i' in the linked list
+
+        Param el: element (value) to be added
+
+        returns: None (nothing)
+        """
+        max_index = self._size - 1
+        if i == 0:
+            self.prepend(el)
+        elif i > max_index:
+            self.append(el)
+        else:
+            current_node = self._get_current_node(i, max_index)
+            prev_node = current_node._prev
+            new_node = Node(el, current_node, prev_node)
+            prev_node._next = new_node
+            current_node._prev = new_node
+            self._size += 1
+
     def reverse(self):
         """
         Reverse the linked list
@@ -110,6 +146,26 @@ class _DoubleLinkedBase:
         initial_first._next = self._tail
         self._tail._prev = initial_first
         self._head._prev = None
+
+    def _get_current_node(self, i, max_index):
+        """Utility method"""
+        mid = math.ceil(max_index/2)
+        if i <= mid:
+            count = 0
+            current_node = self._head._next
+            while count != i:
+                next_node = current_node._next
+                count += 1
+                current_node = next_node
+        else:
+            count = max_index
+            current_node = self._tail._prev
+            while count != i:
+                prev_node = current_node._prev
+                count -= 1
+                current_node = prev_node
+
+        return current_node
 
 
 
